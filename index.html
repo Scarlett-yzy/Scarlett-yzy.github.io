@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7fc">
+  <meta name="description" content="Ziyu Yang — first-year Master's student in Artificial Intelligence at Beijing University of Posts and Telecommunications. Research interests: stereo depth reconstruction, binocular correspondence, low-light and adverse-weather robustness, reliable evaluation, and efficient 3D perception.">
+  <meta name="author" content="Ziyu Yang">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Ziyu Yang | Research Homepage">
+  <meta property="og:description" content="First-year Master's student in Artificial Intelligence at Beijing University of Posts and Telecommunications. Researching stereo depth reconstruction and robust 3D perception.">
+  <meta property="og:url" content="https://scarlett-yzy.github.io/">
+  <title>Ziyu Yang | Research Homepage</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f7fc;
+      --paper: #fff;
+      --ink: #22243a;
+      --muted: #656881;
+      --line: #e5e4ef;
+      --purple: #7655aa;
+      --purple-deep: #5d408e;
+      --lavender: #efebfa;
+      --blue: #edf3ff;
+      --mint: #e7f4f1;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(70, 62, 111, .07);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 3px solid #9476cc; outline-offset: 4px; border-radius: 6px; }
+    .shell { width: min(1140px, calc(100% - 56px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 30; background: rgba(248,247,252,.94); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(209,205,224,.58); }
+    nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 780; font-size: 17px; letter-spacing: -.025em; white-space: nowrap; }
+    .brand-mark { width: 39px; height: 39px; display: grid; place-items: center; background: #e9e1f5; color: var(--purple-deep); border-radius: 13px; font-size: 15px; }
+    .nav-links { display: flex; gap: 29px; align-items: center; color: #55556c; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--purple); }
+    .nav-links .nav-contact { border: 1px solid #cec2e5; color: var(--purple-deep); border-radius: 99px; padding: 8px 16px; }
+    .nav-links .nav-contact:hover { background: #f0eafb; }
+    .hero { padding: 84px 0 72px; display: grid; grid-template-columns: 1.12fr .88fr; gap: 62px; align-items: center; }
+    .eyebrow { display: inline-flex; gap: 9px; align-items: center; color: var(--purple-deep); font-weight: 740; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow .dot { width: 7px; height: 7px; background: #9b83c1; border-radius: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(56px, 7.2vw, 91px); letter-spacing: -.072em; line-height: 1.04; margin: 18px 0 10px; font-weight: 790; }
+    .hero-role { font-size: clamp(21px, 2.7vw, 29px); font-weight: 720; line-height: 1.34; max-width: 670px; letter-spacing: -.025em; margin-bottom: 18px; }
+    .lead { color: var(--muted); font-size: 16px; max-width: 570px; line-height: 1.82; margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 11px; flex-wrap: wrap; }
+    .button { display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; border: 1px solid #d9d4e8; border-radius: 11px; font-weight: 700; font-size: 14px; transition: transform .15s, background .15s; }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--purple-deep); color: #fff; border-color: var(--purple-deep); }
+    .button.primary:hover { background: #4f347e; }
+    .button.secondary { background: #fff; }
+    .hero-illustration { min-height: 415px; border: 1px solid #ded9ee; border-radius: 28px; background: linear-gradient(145deg,#f0eafa 0%,#edf3ff 58%,#e5f4f2 100%); position: relative; overflow: hidden; box-shadow: var(--shadow); }
+    .illustration-grid { position: absolute; inset: 0; opacity: .35; background-image: linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px); background-size: 30px 30px; }
+    .visual-label { position: absolute; left: 26px; top: 27px; color: #6c5a92; letter-spacing: .13em; font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .visual-svg { display: block; position: absolute; inset: 46px 10px 20px; width: calc(100% - 20px); height: calc(100% - 66px); }
+    .visual-footer { position: absolute; right: 22px; bottom: 20px; color: #6f6b8d; font-size: 11px; letter-spacing: .09em; font-weight: 700; }
+    .pill { position: absolute; right: 23px; top: 24px; background: rgba(255,255,255,.82); padding: 6px 12px; border-radius: 100px; color: #605182; font-size: 11px; letter-spacing: .03em; font-weight: 750; }
+    .meta-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 24px 28px; border: 1px solid var(--line); background: #fff; border-radius: 18px; box-shadow: 0 5px 28px rgba(65,59,104,.035); }
+    .meta-label { color: #8d8ba0; text-transform: uppercase; font-size: 11px; font-weight: 750; letter-spacing: .13em; margin-bottom: 5px; }
+    .meta-value { font-size: 14px; line-height: 1.45; color: #35354b; font-weight: 640; overflow-wrap: anywhere; }
+    section { scroll-margin-top: 110px; }
+    .section-block { padding-top: 90px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 22px; margin-bottom: 27px; }
+    .section-kicker { color: var(--purple-deep); text-transform: uppercase; font-size: 12px; font-weight: 780; letter-spacing: .16em; margin-bottom: 10px; }
+    h2 { font-size: clamp(30px,4vw,43px); letter-spacing: -.05em; line-height: 1.15; margin: 0; }
+    .section-note { max-width: 420px; color: var(--muted); font-size: 14px; margin: 0; }
+    .about-panel { display: grid; grid-template-columns: 1.7fr 1fr; gap: 44px; background: #fff; border-radius: var(--radius); border: 1px solid var(--line); padding: 37px 40px; }
+    .about-panel p { font-size: 15px; color: #565a73; line-height: 1.95; margin: 0; }
+    .about-panel p + p { margin-top: 16px; }
+    .about-aside { border-left: 1px solid var(--line); padding-left: 28px; }
+    .aside-label { color: var(--purple-deep); font-size: 11px; text-transform: uppercase; letter-spacing: .13em; font-weight: 780; margin-bottom: 12px; }
+    .aside-item { display: flex; align-items: flex-start; gap: 10px; color: #51526a; font-size: 14px; margin-bottom: 12px; }
+    .bullet { flex-shrink: 0; background: #e8e0f5; color: #6b5298; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 8px; font-size: 11px; font-weight: 800; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+    .card { min-height: 214px; padding: 27px 25px 25px; background: #fff; border: 1px solid var(--line); border-radius: 20px; transition: transform .15s,box-shadow .15s; }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .card:nth-child(1) .card-icon { background: var(--lavender); color: #7354a7; }
+    .card:nth-child(2) .card-icon { background: var(--blue); color: #5976b2; }
+    .card:nth-child(3) .card-icon { background: var(--mint); color: #398579; }
+    .card:nth-child(4) .card-icon { background: #fceaf3; color: #9a5b81; }
+    .card-icon { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 12px; font-weight: 800; margin-bottom: 23px; }
+    h3 { font-size: 18px; line-height: 1.4; letter-spacing: -.024em; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 14px; line-height: 1.75; margin: 0; }
+    .contact { display: flex; justify-content: space-between; gap: 35px; align-items: center; margin: 85px 0 50px; padding: 38px 42px; border-radius: 23px; background: #eae5f6; border: 1px solid #dbd3eb; }
+    .contact h2 { font-size: clamp(27px,3.5vw,37px); margin: 0 0 9px; }
+    .contact p { color: #665b7a; margin-bottom: 0; font-size: 14px; }
+    .contact-link { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; background: #fff; border: 1px solid #d5cbe8; color: var(--purple-deep); font-weight: 780; font-size: 15px; border-radius: 12px; overflow-wrap: anywhere; }
+    .contact-link:hover { background: #faf7ff; }
+    footer { border-top: 1px solid var(--line); padding: 27px 0 36px; color: #85859b; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    @media (max-width: 940px) { .hero { grid-template-columns: 1fr; gap: 38px; padding-top: 54px; } .hero-illustration { min-height: 320px; } .cards { grid-template-columns: 1fr; } .card { min-height: 0; } .about-panel { gap: 25px; } }
+    @media (max-width: 650px) { .shell { width: min(100% - 32px,1140px); } nav { min-height: 66px; } .nav-links { gap: 12px; font-size: 12px; } .nav-links a:first-child, .nav-links a:nth-child(2) { display: none; } .nav-links .nav-contact { padding: 7px 12px; } .hero { padding: 48px 0 46px; } h1 { font-size: clamp(47px,11vw,72px); } .hero-illustration { min-height: 290px; } .meta-bar { grid-template-columns: 1fr; padding: 20px; } .section-block { padding-top: 66px; } .section-head { display: block; } .section-note { margin-top: 16px; } .about-panel { grid-template-columns: 1fr; padding: 26px; } .about-aside { border: none; padding: 18px 0 0; border-top: 1px solid var(--line); } .contact { display: block; margin: 64px 0 36px; padding: 30px 25px; } .contact-link { margin-top: 20px; font-size: 13px; padding: 11px 12px; width: 100%; justify-content: center; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button,.card { transition: none; } }
+  </style>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Ziyu Yang","email":"mailto:2026141114@bupt.cn","affiliation":{"@type":"CollegeOrUniversity","name":"Beijing University of Posts and Telecommunications"},"url":"https://scarlett-yzy.github.io/","sameAs":["https://github.com/Scarlett-yzy"],"knowsAbout":["Stereo depth reconstruction","Stereo matching","Binocular correspondence","Low-light computer vision","Adverse-weather perception","Efficient 3D perception"]}
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="shell" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Ziyu Yang — homepage"><span class="brand-mark">ZY</span><span>Ziyu Yang</span></a>
+      <div class="nav-links"><a href="#about">About</a><a href="#research">Research</a><a href="#contact" class="nav-contact">Contact ↗</a></div>
+    </nav>
+  </header>
+  <main id="home" class="shell">
+    <div class="hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Academic &amp; Research Homepage</div>
+        <h1>Ziyu Yang</h1>
+        <div class="hero-role">Stereo Depth Reconstruction &amp; Robust 3D Perception</div>
+        <p class="lead">I am a <strong>first-year Master's student in Artificial Intelligence</strong> at <strong>Beijing University of Posts and Telecommunications</strong>. My research focuses on recovering scene depth from stereo image pairs, with particular interest in reliable visual correspondence under low-light and adverse-weather conditions.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:2026141114@bupt.cn">✉ &nbsp;Get in touch</a>
+          <a class="button secondary" href="https://github.com/Scarlett-yzy" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+        </div>
+      </div>
+      <div class="hero-illustration" role="img" aria-label="Abstract illustration of stereo vision: two camera views and matched correspondence points">
+        <div class="illustration-grid" aria-hidden="true"></div>
+        <div class="visual-label">Stereo Vision / Depth</div><span class="pill">Computer Vision</span>
+        <svg class="visual-svg" viewBox="0 0 530 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#ded7ef" stop-opacity=".72"/></linearGradient><linearGradient id="object" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a6a4d7"/><stop offset="1" stop-color="#85b5cb"/></linearGradient><filter id="blur"><feGaussianBlur stdDeviation="16"/></filter></defs>
+          <circle cx="263" cy="192" r="123" fill="#fff" opacity=".24" filter="url(#blur)"/>
+          <rect x="37" y="97" width="209" height="177" rx="21" fill="url(#glass)" stroke="#bbb1d7" stroke-width="2"/>
+          <rect x="282" y="97" width="209" height="177" rx="21" fill="url(#glass)" stroke="#b0bbdd" stroke-width="2"/>
+          <g opacity=".55" stroke="#afaacb" stroke-width="1.4"><path d="M58 137h167M58 181h167M58 225h167M303 137h167M303 181h167M303 225h167"/><path d="M100 115v140M157 115v140M345 115v140M402 115v140"/></g>
+          <path d="M111 247l37-103 41 103" fill="none" stroke="#8767b9" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".86"/>
+          <path d="M334 247l37-103 41 103" fill="none" stroke="#78a4c8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".91"/>
+          <g stroke="#947fbc" stroke-width="1.4" fill="none" stroke-dasharray="5 5" opacity=".85"><path d="M112 208C188 185 242 169 334 208"/><path d="M150 148C218 116 281 119 373 148"/><path d="M190 235C245 260 297 260 410 235"/></g>
+          <g fill="#7d65b0"><circle cx="112" cy="208" r="5"/><circle cx="150" cy="148" r="5"/><circle cx="190" cy="235" r="5"/></g><g fill="#78a4c8"><circle cx="334" cy="208" r="5"/><circle cx="373" cy="148" r="5"/><circle cx="410" cy="235" r="5"/></g>
+          <rect x="166" y="298" width="196" height="49" rx="17" fill="#fff" fill-opacity=".9" stroke="#d0c7e1"/>
+          <circle cx="196" cy="322" r="7" fill="#866cb5"/><path d="M218 322h84" stroke="#a5a2c2" stroke-width="3" stroke-linecap="round"/><path d="M319 317l8 5-8 5" fill="none" stroke="#7aa7c6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <g fill="#9c83bd" opacity=".65"><circle cx="66" cy="69" r="4"/><circle cx="437" cy="74" r="4"/><circle cx="463" cy="301" r="4"/><circle cx="61" cy="297" r="4"/></g>
+          <text x="62" y="86" font-size="12" fill="#6c5c93" font-weight="700">LEFT</text><text x="308" y="86" font-size="12" fill="#637fa5" font-weight="700">RIGHT</text>
+        </svg>
+        <div class="visual-footer">TWO VIEWS · ONE DEPTH MAP</div>
+      </div>
+    </div>
+    <div class="meta-bar" aria-label="Academic identity details">
+      <div><div class="meta-label">Affiliation</div><div class="meta-value">Beijing University of Posts and Telecommunications · M.S. in Artificial Intelligence (Year 1)</div></div>
+      <div><div class="meta-label">University email</div><div class="meta-value"><a href="mailto:2026141114@bupt.cn">2026141114@bupt.cn</a></div></div>
+    </div>
+    <section id="about" class="section-block">
+      <div class="section-head"><div><div class="section-kicker">01 / About me</div><h2>About my research journey</h2></div></div>
+      <div class="about-panel">
+        <div><p>I study binocular vision and stereo depth reconstruction: how a model can establish correspondences between left and right images, estimate disparity, and recover the three-dimensional structure of a scene.</p><p>My current interests center on the conditions that make correspondence unreliable—especially weak illumination, rain, fog, reduced contrast, and ambiguous visual features. I am interested in understanding these failure modes through controlled evaluation and exploring approaches that improve robustness without sacrificing computational efficiency.</p><p>As an early-stage researcher, I aim to connect fundamental stereo matching problems with practical depth perception systems that can work beyond ideal imaging conditions.</p></div>
+        <aside class="about-aside"><div class="aside-label">Academic profile</div><div class="aside-item"><span class="bullet">01</span><span>First-year Master's student in Artificial Intelligence</span></div><div class="aside-item"><span class="bullet">02</span><span>Beijing University of Posts and Telecommunications</span></div><div class="aside-item"><span class="bullet">03</span><span>Research area: Computer Vision</span></div></aside>
+      </div>
+    </section>
+    <section id="research" class="section-block">
+      <div class="section-head"><div><div class="section-kicker">02 / Research interests</div><h2>Research interests</h2></div><p class="section-note">Exploring dependable stereo geometry, visual correspondence, and efficient perception in real-world environments.</p></div>
+      <div class="cards">
+        <article class="card"><div class="card-icon" aria-hidden="true">01</div><h3>Stereo Matching &amp; Depth Reconstruction</h3><p>Investigating binocular correspondence, disparity estimation, and the recovery of dense scene depth from synchronized image pairs.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true">02</div><h3>Low-Light &amp; Adverse-Weather Robustness</h3><p>Understanding how poor illumination, rain, fog, reduced contrast, and image noise affect stereo features and matching reliability.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true">03</div><h3>Reliable Matching &amp; Evaluation</h3><p>Studying correspondence ambiguity, matching failures, and experimental evaluation across diverse real-world imaging conditions.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true">04</div><h3>Lightweight &amp; Deployable Stereo Vision</h3><p>Exploring efficient depth-estimation networks that balance accuracy, robustness, inference speed, and resource constraints.</p></article>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div><div class="section-kicker">03 / Contact</div><h2>Let's connect.</h2><p>For academic correspondence and potential research discussions, please feel free to reach out by university email.</p></div>
+      <a class="contact-link" href="mailto:2026141114@bupt.cn">2026141114@bupt.cn ↗</a>
+    </section>
+  </main>
+  <footer><div class="shell footer-inner"><span>© <span id="year">2026</span> Ziyu Yang · Academic Homepage</span><span>Beijing University of Posts and Telecommunications</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
